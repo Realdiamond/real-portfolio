@@ -2,7 +2,7 @@
 
 A production-grade, immersive developer portfolio built with **SvelteKit** and **Svelte 5**. This project is engineered to feel like an experience rather than a static page, featuring a futuristic "Cyber Neon" design system, interactive terminal, and AI-driven components.
 
-**Live Demo**: [Your Vercel/Netlify URL Here]
+**Live Demo**: [Your Vercel URL Here]
 **Stage**: Frontend Wizards — Stage 5b
 
 ---
