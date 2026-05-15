@@ -7,7 +7,11 @@ const config = {
 	},
 	kit: {
 		adapter: adapter({
-			fallback: '404.html'
+			pages: 'public',
+			assets: 'public',
+			fallback: '404.html',
+			precompress: false,
+			strict: true
 		}),
 		prerender: {
 			handleHttpError: ({ path, message }) => {
