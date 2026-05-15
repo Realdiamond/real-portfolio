@@ -58,7 +58,7 @@
 
 			<h1 class="hero-title">
 				Hi, I'm <br />
-				<span class="name-highlight">Timilehin</span>
+				<span class="name-highlight">💎 Timilehin</span>
 				<span class="name-last"> Akinsanmi</span>
 			</h1>
 

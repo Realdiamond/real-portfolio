@@ -87,7 +87,7 @@
 				return;
 			}
 			if (cmd === 'resume') {
-				window.open('/assets/resume.pdf', '_blank');
+				window.open('/assets/Timilehin_Akinsanmi_Resume.pdf', '_blank');
 			}
 			if (cmd === 'theme') {
 				theme.toggle();
@@ -142,6 +142,11 @@
 	onkeydown={() => {}}
 	tabindex="-1"
 >
+	<!-- Screen reader helper -->
+	<div class="sr-only">
+		Interactive bash terminal. Type commands to explore the portfolio. Available commands: about,
+		skills, projects, contact, resume, theme, clear, sudo hire. Use up and down arrows for history.
+	</div>
 	<!-- Title bar -->
 	<div class="terminal-titlebar">
 		<div class="terminal-dots">

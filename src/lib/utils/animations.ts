@@ -1,63 +1,68 @@
 import { browser } from '$app/environment';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-/**
- * Intersection Observer — trigger callback when element enters viewport
- */
-export function onVisible(
-	node: Element,
-	callback: (entry: IntersectionObserverEntry) => void,
-	options?: IntersectionObserverInit
-): () => void {
-	if (!browser) return () => {};
-
-	const observer = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					callback(entry);
-				}
-			});
-		},
-		{ threshold: 0.15, ...options }
-	);
-
-	observer.observe(node);
-	return () => observer.disconnect();
+if (browser) {
+	gsap.registerPlugin(ScrollTrigger);
 }
 
 /**
- * Svelte action: fade-in on scroll
+ * Svelte action: fade-in on scroll using GSAP
  */
 export function fadeInOnScroll(node: HTMLElement): { destroy(): void } {
-	node.classList.add('fade-in');
+	if (!browser) return { destroy: () => {} };
 
-	const cleanup = onVisible(node, () => {
-		node.classList.add('visible');
-	});
+	const anim = gsap.fromTo(
+		node,
+		{ opacity: 0, y: 30 },
+		{
+			opacity: 1,
+			y: 0,
+			duration: 0.8,
+			ease: 'power3.out',
+			scrollTrigger: {
+				trigger: node,
+				start: 'top 85%',
+				toggleActions: 'play none none none'
+			}
+		}
+	);
 
-	return { destroy: cleanup };
+	return {
+		destroy() {
+			anim.kill();
+		}
+	};
 }
 
 /**
- * Staggered reveal for lists of children
+ * Staggered reveal for lists of children using GSAP
  */
-export function staggerReveal(container: HTMLElement, staggerMs = 100): { destroy(): void } {
-	const children = Array.from(container.children) as HTMLElement[];
+export function staggerReveal(container: HTMLElement, staggerMs = 0.1): { destroy(): void } {
+	if (!browser) return { destroy: () => {} };
 
-	children.forEach((child, i) => {
-		child.style.opacity = '0';
-		child.style.transform = 'translateY(24px)';
-		child.style.transition = `opacity 0.5s ease ${i * staggerMs}ms, transform 0.5s ease ${i * staggerMs}ms`;
-	});
+	const children = container.children;
+	const anim = gsap.fromTo(
+		children,
+		{ opacity: 0, y: 20 },
+		{
+			opacity: 1,
+			y: 0,
+			duration: 0.6,
+			stagger: staggerMs,
+			ease: 'power2.out',
+			scrollTrigger: {
+				trigger: container,
+				start: 'top 85%'
+			}
+		}
+	);
 
-	const cleanup = onVisible(container, () => {
-		children.forEach((child) => {
-			child.style.opacity = '1';
-			child.style.transform = 'translateY(0)';
-		});
-	});
-
-	return { destroy: cleanup };
+	return {
+		destroy() {
+			anim.kill();
+		}
+	};
 }
 
 /**

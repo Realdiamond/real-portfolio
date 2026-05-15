@@ -2,8 +2,9 @@
 
 A production-grade, immersive developer portfolio built with **SvelteKit** and **Svelte 5**. This project is engineered to feel like an experience rather than a static page, featuring a futuristic "Cyber Neon" design system, interactive terminal, and AI-driven components.
 
-**Live Demo**: [Your Vercel URL Here]
+**Live Demo**: [https://real-portfolio-two-ecru.vercel.app/](https://real-portfolio-two-ecru.vercel.app/)
 **Stage**: Frontend Wizards — Stage 5b
+**Repository**: [https://github.com/Realdiamond/real-portfolio](https://github.com/Realdiamond/real-portfolio)
 
 ---
 
@@ -66,7 +67,7 @@ I chose **GSAP** for the hero and scroll-triggered reveals because of its high-p
 1. **Clone the repository**:
 
    ```bash
-   git clone [your-repo-link]
+   git clone https://github.com/Realdiamond/real-portfolio.git
    ```
 
 2. **Install dependencies**:

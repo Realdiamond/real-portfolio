@@ -70,7 +70,7 @@
 			icon: '📄',
 			category: 'Actions',
 			action: () => {
-				if (browser) window.open('/assets/resume.pdf', '_blank');
+				if (browser) window.open('/assets/Timilehin_Akinsanmi_Resume.pdf', '_blank');
 			}
 		},
 		// Projects
