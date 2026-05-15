@@ -1,0 +1,235 @@
+/* ============================================
+   ANIMATIONS — Keyframes & Animation Classes
+   ============================================ */
+
+/* Blink cursor */
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+/* Glitch effect */
+@keyframes glitch {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translate(-2px, 2px);
+	}
+	40% {
+		transform: translate(-2px, -2px);
+	}
+	60% {
+		transform: translate(2px, 2px);
+	}
+	80% {
+		transform: translate(2px, -2px);
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+/* Float */
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-12px);
+	}
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+	0%,
+	100% {
+		box-shadow: 0 0 10px rgba(0, 255, 229, 0.3);
+	}
+	50% {
+		box-shadow:
+			0 0 30px rgba(0, 255, 229, 0.7),
+			0 0 60px rgba(0, 255, 229, 0.3);
+	}
+}
+
+/* Shimmer */
+@keyframes shimmer {
+	0% {
+		background-position: -200% center;
+	}
+	100% {
+		background-position: 200% center;
+	}
+}
+
+/* Scan line */
+@keyframes scan {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(100vh);
+	}
+}
+
+/* Typewriter */
+@keyframes typewriter {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+/* Spin */
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Fade slide up */
+@keyframes fade-slide-up {
+	from {
+		opacity: 0;
+		transform: translateY(32px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Fade slide in right */
+@keyframes fade-slide-right {
+	from {
+		opacity: 0;
+		transform: translateX(-32px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Scale in */
+@keyframes scale-in {
+	from {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Border flow */
+@keyframes border-flow {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Grid pulse background */
+@keyframes grid-pulse {
+	0%,
+	100% {
+		opacity: 0.03;
+	}
+	50% {
+		opacity: 0.07;
+	}
+}
+
+/* Neon flicker */
+@keyframes neon-flicker {
+	0%,
+	19%,
+	21%,
+	23%,
+	25%,
+	54%,
+	56%,
+	100% {
+		text-shadow:
+			0 0 5px var(--accent-primary),
+			0 0 10px var(--accent-primary),
+			0 0 20px var(--accent-primary);
+	}
+	20%,
+	24%,
+	55% {
+		text-shadow: none;
+	}
+}
+
+/* ============================================
+   ANIMATION UTILITY CLASSES
+   ============================================ */
+.animate-blink {
+	animation: blink 1s step-end infinite;
+}
+
+.animate-float {
+	animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+	animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin {
+	animation: spin 1s linear infinite;
+}
+
+.animate-fade-up {
+	animation: fade-slide-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-glitch {
+	animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Stagger delay utilities */
+.delay-100 {
+	animation-delay: 100ms;
+}
+.delay-200 {
+	animation-delay: 200ms;
+}
+.delay-300 {
+	animation-delay: 300ms;
+}
+.delay-400 {
+	animation-delay: 400ms;
+}
+.delay-500 {
+	animation-delay: 500ms;
+}
+.delay-600 {
+	animation-delay: 600ms;
+}
+.delay-700 {
+	animation-delay: 700ms;
+}
+.delay-800 {
+	animation-delay: 800ms;
+}

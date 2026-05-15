@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Primary Meta Tags -->
+		<title>Timilehin Akinsanmi — Frontend Developer</title>
+		<meta name="title" content="Timilehin Akinsanmi — Frontend Developer" />
+		<meta
+			name="description"
+			content="Staff Frontend Engineer with 6+ years of experience engineering performant, accessible, and visually striking web applications. Explore my projects, skills, and interactive portfolio."
+		/>
+		<meta
+			name="keywords"
+			content="frontend developer, Staff Engineer, React, SvelteKit, TypeScript, portfolio, web developer, Nigeria"
+		/>
+		<meta name="author" content="Timilehin Akinsanmi" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://timilehin.dev/" />
+		<meta property="og:title" content="Timilehin Akinsanmi — Staff Frontend Engineer" />
+		<meta
+			property="og:description"
+			content="Staff Frontend Engineer with 6+ years of experience engineering performant, accessible, and visually striking web applications."
+		/>
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://timilehin.dev/" />
+		<meta property="twitter:title" content="Timilehin Akinsanmi — Staff Frontend Engineer" />
+		<meta
+			property="twitter:description"
+			content="Staff Frontend Engineer with 6+ years of experience engineering performant, accessible, and visually striking web applications."
+		/>
+		<meta property="twitter:creator" content="@Iam_RealDiamond" />
+
+		<!-- Favicon -->
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+
+		<!-- Google Fonts preconnect -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+
+		<!-- Theme script: prevent flash of wrong theme -->
+		<script>
+			(function () {
+				const stored = localStorage.getItem('portfolio-theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				const theme = stored || (prefersDark ? 'dark' : 'light');
+				document.documentElement.setAttribute('data-theme', theme);
+			})();
+		</script>
+
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
